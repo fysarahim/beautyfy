@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Beauty Finder</title>
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-pink-50 flex flex-col">
+    <div class="container mx-auto px-4 flex-grow">
+        <!-- Header -->
+        <header class="bg-pink-200 text-pink-900 py-4 shadow-sm">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between">
+                    <h1 class="text-2xl font-bold">
+                        <a href="index.html" class="hover:text-pink-700 transition-colors">BeautyFy<span>.co</span></a>
+                    </h1>
+                    <nav class="flex items-center gap-6">
+                        <a href="products.html" class="hover:text-pink-700 transition-colors">Products</a>
+                        <a href="about.html" class="hover:text-pink-700 transition-colors">About</a>
+                        <button id="quitButton" class="bg-pink-500 text-white px-3 py-1 rounded hover:bg-pink-600 transition-colors">
+                            Quit
+                        </button>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main class="py-4">
+            <section class="search-section mb-4">
+                <input type="text" id="product" placeholder="Enter product type (e.g., blusher, mascara)" class="border rounded px-2 py-1 w-full mb-2">
+                <input type="text" id="brand" placeholder="Enter brand name (e.g., maybelline, l'oreal)" class="border rounded px-2 py-1 w-full mb-2">
+                <input type="number" id="minPrice" placeholder="Min Price" class="border rounded px-2 py-1 w-full mb-2">
+                <input type="number" id="maxPrice" placeholder="Max Price" class="border rounded px-2 py-1 w-full mb-2">
+                <button onclick="getBeautyProducts()" class="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 w-full">
+                    Search Products
+                </button>
+            </section>
+        
+            <section id="productResult" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 product-results mb-4"></section>
+        
+            <div id="saveBox" style="display: none;">
+                <button onclick="saveProductData()" class="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 w-full">
+                    Save Results
+                </button>
+            </div>
+        
+            <section class="favorites-section mb-4">
+                <h2 class="text-lg font-bold mb-2">Favorites</h2>
+                <div id="favoritesList" class="favorites-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+            </section>
+        
+            <section class="file-operations mb-4">
+                <h2 class="text-lg font-bold mb-2">Saved Searches</h2>
+                <input type="text" id="fileName" placeholder="Enter file name" class="border rounded px-2 py-1 w-full mb-2">
+                <button onclick="readProductData()" class="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 w-full">
+                    Read Saved Data
+                </button>
+                <div id="readResult" class="mt-2"></div>
+            </section>
+        </main>
+    </div>
+    <footer class="bg-pink-200 text-pink-900 py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-xl font-bold mb-2">Beauty Fy &copy; 2024</h2>
+            <p class="mb-2">Your one-stop destination for personalized beauty products.</p>
+            <p>
+                Contact us: 
+                <a href="mailto:bf@gmail.com" class="hover:text-pink-700 transition-colors">bf@gmail.com</a> | 
+                <a href="tel:+60194027594" class="hover:text-pink-700 transition-colors">+6019-402 7594</a>
+            </p>
+        </div>
+    </footer>
+        
+    <script src="script.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

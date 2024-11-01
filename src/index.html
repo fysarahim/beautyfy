@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BF</title>
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Add CSS styles for the slider */
+        .slider {
+            position: relative;
+            overflow: hidden;
+            display: flex; /* Use flexbox */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+        }
+
+        .slide {
+            display: none;
+            transition: opacity 0.5s ease-in-out;
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center items horizontally */
+            text-align: center; /* Center text */
+        }
+
+        .slide.active {
+            display: flex; /* Change to flex for active slide */
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Custom styles */
+        .main-title {
+            color: #ffffff; /* Soft pink */
+        }
+
+        .sub-title {
+            color: #fafafa; /* Light pink */
+        }
+
+        .slider-title {
+            color: #ffffff; /* Medium pink */
+        }
+
+        .slider-text {
+            color: #ffffff; /* White for contrast */
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-pink-50 flex flex-col">
+    <div class="container mx-auto px-4 flex-grow">
+        <!-- Header -->
+        <header class="bg-pink-200 text-pink-900 py-4 shadow-sm">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between">
+                    <h1 class="text-2xl font-bold">
+                        <a href="index.html" class="hover:text-pink-700 transition-colors">BeautyFy<span>.co</span></a>
+                    </h1>
+                    <nav class="flex items-center gap-6">
+                        <a href="products.html" class="hover:text-pink-700 transition-colors">Products</a>
+                        <a href="about.html" class="hover:text-pink-700 transition-colors">About</a>
+                        <button id="quitButton" class="bg-pink-500 text-white px-3 py-1 rounded hover:bg-pink-600 transition-colors">
+                            Quit
+                        </button>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Main Image Section -->
+        <main class="py-12">
+            <div class="relative">
+                <div class="absolute inset-0 bg-pink-900 opacity-50"></div>
+                <div class="relative z-10 text-center py-24">
+                    <div class="max-w-3xl mx-auto">
+                        <h1 class="text-4xl font-bold main-title mb-4">Find Your Perfect Beauty Products</h1>
+                        <h2 class="text-2xl sub-title">Discover recommendations tailored to you</h2>
+                    </div>
+                    
+                    <!-- Slider Section -->
+                    <div class="slider-container max-w-3xl mx-auto">
+                        <h2 class="text-2xl font-bold slider-title mb-4">Explore Our Media</h2>
+                        <div class="slider">
+                            <div class="slide active">
+                                <h2 class="text-2xl font-bold slider-text mb-4">TEN x Maybelline Firework Mascara</h2>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/7jst-LEcFZg?si=uFADOgAf11psB5eg" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                            <div class="slide">
+                                <h2 class="text-2xl font-bold slider-text mb-4">Makeup GIF</h2>
+                                <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNG83NzNzN3V3aGtwbXM0NTlmb2xlZm91MG9sNGo4cHIxc2hkMGtpaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lkPQn9sed9emMX2kZI/giphy.gif" alt="Maybelline Makeup GIF">
+                            </div>
+                        </div>
+                        <div class="slider-controls">
+                            <button id="prevButton" class="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600">Previous</button>
+                            <button id="nextButton" class="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600">Next</button>
+                        </div>
+                    </div>
+                    <nav class="flex items-center gap-6">
+                        <a href="products.html" class="bg-pink-500 text-white px-3 py-1 rounded hover:bg-pink-600 transition-colors">See our products</a>
+                    </nav>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-pink-200 text-pink-900 py-8">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-xl font-bold mb-2">Beauty Fy &copy; 2024</h2>
+                <p class="mb-2">Your one-stop destination for personalized beauty products.</p>
+                <p>
+                    Contact us: 
+                    <a href="mailto:bf@gmail.com" class="hover:text-pink-700">bf@gmail.com</a> | 
+                    <a href="tel:+60194027594" class="hover:text-pink-700">+6019-402 7594</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
